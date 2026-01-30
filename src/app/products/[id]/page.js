@@ -15,7 +15,6 @@ async function getProduct(id) {
 }
 
 export default async function ProductDetail({ params }) {
-  // ⬇️ WAJIB await params (Next.js baru)
   const { id } = await params;
 
   const product = await getProduct(id);
