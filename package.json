@@ -1,5 +1,5 @@
 {
-  "name": "milestone-3-wmibrahim",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,17 +8,26 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^1.13.5",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.24",
     "babel-plugin-react-compiler": "1.0.0",
-    "tailwindcss": "^4",
+    "jest": "^30.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "ts-jest": "^29.4.6",
     "typescript": "^5"
   }
 }

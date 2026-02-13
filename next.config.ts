@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  images: {
+    domains: ["api.escuelajs.co"],
+  },
 };
 
 export default nextConfig;

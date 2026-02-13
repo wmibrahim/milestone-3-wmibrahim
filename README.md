@@ -1,7 +1,5 @@
-Quick link for open the pages [RevoShop](https://milestone-3-wmibrahim.vercel.app/products)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-
-## testes
 ## Getting Started
 
 First, run the development server:
