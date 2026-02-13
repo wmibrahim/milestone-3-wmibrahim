@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Next.js E-Commerce App
 
-## Getting Started
+quick link milestone-3-wmibrahim.vercel.app
 
-First, run the development server:
+Modern E-Commerce website built with:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- ⚡ Next.js 14 (App Router)
+- 🔷 TypeScript
+- 🎨 Tailwind CSS
+- 🗂 Zustand (Cart State + Persist)
+- 🔐 Authentication (Fake Store API)
+- 🛠 Admin Dashboard (CRUD API Routes)
+- ♻️ ISR (Incremental Static Regeneration)
+- 🧪 Jest + React Testing Library
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# 🚀 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Authentication
+- Fetch users from Platzi Fake API
+- Simple login validation
+- Middleware protection for Checkout page
 
-## Learn More
+## 🛒 Shopping Cart
+- Zustand state management
+- Persist cart in localStorage
+- Add & remove products
+- Checkout summary
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Admin Dashboard
+- Create products (API Route)
+- View product list
+- Basic CRUD system
+- ISR enabled for product pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚡ Performance Optimization
+- ISR enabled (revalidate: 60)
+- Lazy loading components
+- Optimized fetch handling
+- Server Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# 📦 API Source
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project uses:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://api.escuelajs.co/api/v1
+
+
+Endpoints used:
+
+- `/products`
+- `/products/:id`
+- `/users`
+
+---
+
+# 🏗 Project Structure
+
+app/
+├── page.tsx
+├── login/
+├── checkout/
+├── admin/
+├── products/[id]/
+├── api/products/
+├── middleware.ts
+
+components/
+├── Navbar.tsx
+├── ProductCard.tsx
+
+store/
+├── cartStore.ts
+
+lib/
+├── auth.ts
+
