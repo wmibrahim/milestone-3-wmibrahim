@@ -1,80 +1,83 @@
-# 🛒 Next.js E-Commerce App
+# 🛍️ RevoShop — Milestone 3
 
-quick link milestone-3-wmibrahim.vercel.app
+A full-stack e-commerce web application built with **Next.js 14**, featuring product listing, shopping cart, checkout, and admin dashboard with CRUD functionality.
 
-Modern E-Commerce website built with:
+## 🚀 Live Demo
 
-- ⚡ Next.js 14 (App Router)
-- 🔷 TypeScript
-- 🎨 Tailwind CSS
-- 🗂 Zustand (Cart State + Persist)
-- 🔐 Authentication (Fake Store API)
-- 🛠 Admin Dashboard (CRUD API Routes)
-- ♻️ ISR (Incremental Static Regeneration)
-- 🧪 Jest + React Testing Library
+[https://milestone-3-wmibrahim.vercel.app](https://milestone-3-wmibrahim.vercel.app)
 
----
+## ✨ Features
 
-# 🚀 Features
+- 🛒 **Product Listing** — Browse products fetched from external API
+- 🔍 **Product Detail** — View detail of each product
+- 🧺 **Shopping Cart** — Add/remove products using Zustand state management
+- 💳 **Checkout** — Protected checkout page (login required)
+- 🔐 **Authentication** — Admin login with cookie-based auth & middleware protection
+- ⚙️ **Admin Dashboard** — Full CRUD (Create, Read, Update, Delete) for products
 
-## 🔐 Authentication
-- Fetch users from Platzi Fake API
-- Simple login validation
-- Middleware protection for Checkout page
+## 🗂️ Project Structure
 
-## 🛒 Shopping Cart
-- Zustand state management
-- Persist cart in localStorage
-- Add & remove products
-- Checkout summary
+```
+src/
+├── app/
+│   ├── page.tsx               # Homepage - product listing
+│   ├── admin/
+│   │   ├── page.tsx           # Admin dashboard (CRUD)
+│   │   └── login/page.tsx     # Admin login page
+│   ├── api/
+│   │   ├── login/route.ts     # Login API
+│   │   ├── logout/route.ts    # Logout API
+│   │   ├── me/route.ts        # Auth check API
+│   │   └── products/          # Products CRUD API
+│   ├── products/[id]/         # Product detail page
+│   ├── checkout/page.tsx      # Checkout page
+│   └── login/page.tsx         # User login page
+├── components/
+│   ├── Navbar.tsx             # Navigation bar
+│   └── ProductCard.tsx        # Product card component
+├── lib/
+│   └── auth.ts                # Auth helper
+├── store/
+│   └── cartStore.ts           # Zustand cart store
+├── tests/
+│   └── ProductCard.test.tsx   # Unit test
+└── middleware.ts               # Route protection middleware
+```
 
-## 🛠 Admin Dashboard
-- Create products (API Route)
-- View product list
-- Basic CRUD system
-- ISR enabled for product pages
+## 🛠️ Tech Stack
 
-## ⚡ Performance Optimization
-- ISR enabled (revalidate: 60)
-- Lazy loading components
-- Optimized fetch handling
-- Server Components
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **State Management:** Zustand
+- **Authentication:** Cookie-based + Middleware
+- **External API:** [Platzi Fake Store API](https://api.escuelajs.co/api/v1)
+- **Deployment:** Vercel
 
----
+## ⚙️ Getting Started
 
-# 📦 API Source
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-This project uses:
+### Installation
 
-https://api.escuelajs.co/api/v1
+```bash
+git clone https://github.com/wmibrahim/milestone-3-wmibrahim.git
+cd milestone-3-wmibrahim
+npm install
+npm run dev
+```
 
+Open [http://localhost:3000](http://localhost:3000)
 
-Endpoints used:
+## 🔐 Admin Access
 
-- `/products`
-- `/products/:id`
-- `/users`
+| URL | Credentials |
+|---|---|
+| `/admin/login` | username: `admin` / password: `123456` |
 
----
+## 🧪 Running Tests
 
-# 🏗 Project Structure
-
-app/
-├── page.tsx
-├── login/
-├── checkout/
-├── admin/
-├── products/[id]/
-├── api/products/
-├── middleware.ts
-
-components/
-├── Navbar.tsx
-├── ProductCard.tsx
-
-store/
-├── cartStore.ts
-
-lib/
-├── auth.ts
-
+```bash
+npm run test
+```
