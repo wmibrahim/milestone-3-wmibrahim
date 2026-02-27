@@ -8,7 +8,9 @@ async function getProduct(id: string) {
     `https://api.escuelajs.co/api/v1/products/${id}`,
     { cache: "no-store" }
   );
+
   if (!res.ok) return null;
+
   return res.json();
 }
 
@@ -17,10 +19,13 @@ export default async function ProductPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  // Next.js 15: params harus di-await
   const { id } = await params;
   const product = await getProduct(id);
 
-  if (!product) notFound();
+  if (!product) {
+    notFound();
+  }
 
   return (
     <>
@@ -32,10 +37,13 @@ export default async function ProductPage({
             alt={product.title}
             className="w-full md:w-1/2 rounded-lg object-cover"
           />
+
           <div>
             <h1 className="text-3xl font-bold">{product.title}</h1>
             <p className="mt-4 text-gray-600">{product.description}</p>
-            <p className="mt-6 text-2xl font-bold text-indigo-600">${product.price}</p>
+            <p className="mt-6 text-2xl font-bold text-indigo-600">
+              ${product.price}
+            </p>
           </div>
         </div>
       </div>
