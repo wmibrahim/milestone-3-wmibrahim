@@ -10,11 +10,17 @@ async function getExternalProducts() {
 }
 
 async function getLocalProducts() {
-  const res = await fetch("http://localhost:3000/api/products", {
-    cache: "no-store", // ✅ Selalu fresh, tidak di-cache
-  });
-  if (!res.ok) return [];
-  return res.json();
+  try {
+    // ✅ Ganti localhost dengan path relatif yang aman
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
+    const res = await fetch(`${baseUrl}/api/products`, {
+      cache: "no-store",
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch {
+    return []; // ✅ Kalau gagal, return array kosong agar tidak error
+  }
 }
 
 export default async function Home() {
@@ -23,7 +29,6 @@ export default async function Home() {
     getLocalProducts(),
   ]);
 
-  // ✅ Gabungkan produk lokal + external
   const allProducts = [...localProducts, ...externalProducts];
 
   return (
